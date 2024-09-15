@@ -1,7 +1,9 @@
+import Welcome from "./Pages/Welcome";
+
 function App() {
   return (
-    <div className="w-full md:w-[50%] bg-light-bg">
-      <h1 className="font-bold">test</h1>
+    <div className="w-full md:w-[50%] bg-light-primary font-montserrat">
+      <Welcome />
     </div>
   );
 }
