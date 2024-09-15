@@ -1,10 +1,8 @@
 function App() {
   return (
-    <>
-      <h1 className="font-bold text-uflash-light-text bg-uflash-dark-bg w-full">
-        test
-      </h1>
-    </>
+    <div className="w-full md:w-[50%] bg-light-bg">
+      <h1 className="font-bold">test</h1>
+    </div>
   );
 }
 
