@@ -9,7 +9,7 @@ const Welcome = () => {
   };
 
   return (
-    <section className="w-full h-screen flex flex-col justify-center items-center gap-5 text-center">
+    <section className="w-full h-screen bg-light-primary flex flex-col justify-center items-center gap-5 text-center">
       <img src={logo} alt="" />
       <div className="flex flex-col justify-center items-center gap-3">
         <h1 className="font-bold text-3xl">Welcome to UFlash</h1>
