@@ -6,6 +6,7 @@ export const CategoryLay = ({
   handleBtnCategory,
   handleCategory,
   handleFlashcard,
+  handleTitleList,
 }) => {
   return (
     <>
@@ -20,6 +21,7 @@ export const CategoryLay = ({
               x={x}
               index={index}
               handleCategory={handleCategory}
+              handleTitleList={handleTitleList}
             />
           );
         })}

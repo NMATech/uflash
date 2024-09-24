@@ -1,15 +1,14 @@
 import Td from "../Elements/Table/Td";
 import Th from "../Elements/Table/Th";
 import BtnDelete from "../Elements/ListCategory/BtnDelete";
+import useFlashcard from "../../Hooks/useFlashcard/useFlashcard";
 
-const Table = () => {
+const Table = ({ titleCategory }) => {
   const thead = ["No", "Question", "Answer", "Action"];
-  const data = [
-    {
-      Question: "Apa",
-      Answer: "adalah",
-    },
-  ];
+  const { flashcard } = useFlashcard();
+  const filteredData = flashcard.filter((x) => {
+    return x.category === titleCategory;
+  });
 
   return (
     <table class="w-full table-auto border-separate">
@@ -21,12 +20,12 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {data.map((title, index) => {
+        {filteredData.map((title, index) => {
           return (
             <tr index={index} className="">
               <Td title={index + 1} />
-              <Td title={title.Question} />
-              <Td title={title.Answer} />
+              <Td title={title.question} />
+              <Td title={title.answer} />
               <td className="flex justify-center">
                 <BtnDelete size={10} />
               </td>
