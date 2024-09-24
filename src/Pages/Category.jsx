@@ -3,9 +3,10 @@ import { CategoryLay } from "../Components/Layouts/CategoryLay";
 import ModalFormCategory from "../Components/Layouts/ModalFormCategory";
 import ModalListCard from "../Components/Layouts/ModalListCard";
 import ModalFormFlashcard from "../Components/Layouts/ModalFormFlashcard";
+import useCategory from "../Hooks/useCategory/useCategory";
 
 const Category = () => {
-  const data = ["food", "cloth", "gadget"];
+  const { category, dispatch } = useCategory();
   const [isBtnCategoryClicked, setIsBtnCategoryClicked] = useState(false);
   const [isCategory, setIsCategoryClicked] = useState(false);
   const [isFlashcard, setIsFlashcard] = useState(false);
@@ -29,7 +30,7 @@ const Category = () => {
           handleBtnCategory={handleBtnCategory}
           handleCategory={handleCategory}
           handleFlashcard={handleFlashcard}
-          data={data}
+          data={category}
         />
       </section>
       {isCategory && <ModalListCard handleCategory={handleCategory} />}
