@@ -1,7 +1,7 @@
-export const Btn2 = ({ children, handleBtnCategory }) => {
+export const Btn2 = ({ children, handle }) => {
   return (
     <button
-      onClick={handleBtnCategory}
+      onClick={handle}
       className="w-[50%] flex justify-center items-center gap-2 bg-dark-accent px-6 py-1 rounded-xl"
     >
       {children}
