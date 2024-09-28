@@ -1,7 +1,8 @@
-import useCategory from "../../../Hooks/useCategory/useCategory";
+import { useContext } from "react";
+import { GlobalContext } from "../../../Hooks/AppCategory/GlobalState";
 
 const SelectInput = () => {
-  const { category } = useCategory();
+  const { category } = useContext(GlobalContext);
 
   return (
     <select name="" id="" className="w-full border border-slate-400 p-1">

@@ -1,8 +1,8 @@
-import useCategory from "../../../Hooks/useCategory/useCategory";
+import { useContext } from "react";
+import { GlobalContext } from "../../../Hooks/AppCategory/GlobalState";
 
 export const Option = () => {
-  const { category } = useCategory();
-
+  const { category } = useContext(GlobalContext);
   return (
     <>
       <option value="" disabled selected className="w-full rounded-xl">

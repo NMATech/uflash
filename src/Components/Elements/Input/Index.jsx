@@ -1,11 +1,11 @@
 import Input from "./Input";
 import Title from "./Title";
 
-const InputField = ({ type, title }) => {
+const InputField = ({ type, title, value, handle }) => {
   return (
     <section>
       <Title>{title}</Title>
-      <Input type={type} />
+      <Input value={value} handle={handle} type={type} />
     </section>
   );
 };

@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CategoryLay } from "../Components/Layouts/CategoryLay";
 import ModalFormCategory from "../Components/Layouts/ModalFormCategory";
 import ModalListCard from "../Components/Layouts/ModalListCard";
 import ModalFormFlashcard from "../Components/Layouts/ModalFormFlashcard";
-import useCategory from "../Hooks/useCategory/useCategory";
+import { GlobalContext } from "../Hooks/AppCategory/GlobalState";
 
 const Category = () => {
-  const { category, dispatch } = useCategory();
+  const { category } = useContext(GlobalContext);
   const [isBtnCategoryClicked, setIsBtnCategoryClicked] = useState(false);
   const [isCategory, setIsCategoryClicked] = useState(null);
   const [isFlashcard, setIsFlashcard] = useState(false);
@@ -30,6 +30,10 @@ const Category = () => {
     setTitleFlashcard(title);
   };
 
+  useEffect(() => {
+    console.log("Category ditambahkan", category);
+  }, [category]);
+
   return (
     <>
       <section className="w-[50%] mx-auto p-3">
@@ -41,6 +45,8 @@ const Category = () => {
           data={category}
         />
       </section>
+      <p>{JSON.stringify(category)}</p>{" "}
+      {/* Tambahkan ini untuk melihat kategori */}
       {isCategory && (
         <ModalListCard
           handleCategory={handleCategory}

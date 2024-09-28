@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { HeadlineCategory } from "../Fragments/HeadlineCategory";
 import ListCategoryFrag from "../Fragments/ListCategoryFrag";
 
@@ -8,6 +9,9 @@ export const CategoryLay = ({
   handleFlashcard,
   handleTitleList,
 }) => {
+  useEffect(() => {
+    console.log("test");
+  }, [data]);
   return (
     <>
       <HeadlineCategory
