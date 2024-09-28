@@ -1,8 +1,15 @@
 import Number from "./Number";
 import Lists from "./Lists";
 import BtnDelete from "./BtnDelete";
+import BtnEdit from "./BtnEdit";
 
-const ListCategorys = ({ index, x, handleCategory, handleTitleList }) => {
+const ListCategorys = ({
+  index,
+  x,
+  handleCategory,
+  handleTitleList,
+  handleBtnEdit,
+}) => {
   return (
     <>
       <section className="flex items-center gap-3">
@@ -17,7 +24,15 @@ const ListCategorys = ({ index, x, handleCategory, handleTitleList }) => {
           <Lists x={x} handleCategory={handleCategory} />
         </button>
       </section>
-      <BtnDelete size={20} />
+      <section className="flex gap-2">
+        <BtnEdit
+          handleBtnEdit={handleBtnEdit}
+          x={x}
+          handleTitleList={handleTitleList}
+          size={20}
+        />
+        <BtnDelete size={20} />
+      </section>
     </>
   );
 };

@@ -5,8 +5,8 @@ import { RxCross2 } from "react-icons/rx";
 import { ACTIONS } from "../../Hooks/action/ACTIONS";
 import { GlobalContext } from "../../Hooks/AppCategory/GlobalState";
 
-const FormCategory = ({ handleBtnCategory }) => {
-  const [value, setValue] = useState("");
+const FormCategory = ({ title, nilai = "", handleBtnCategory }) => {
+  const [value, setValue] = useState(nilai);
   const { addCategory } = useContext(GlobalContext);
 
   const handleInput = (e) => {
@@ -32,7 +32,9 @@ const FormCategory = ({ handleBtnCategory }) => {
         </button>
       </section>
       <section>
-        <h1 className="text-center font-semibold text-xl">Form Add Category</h1>
+        <h1 className="text-center font-semibold text-xl">
+          Form {title} Category
+        </h1>
       </section>
       <InputField
         value={value}
@@ -40,7 +42,7 @@ const FormCategory = ({ handleBtnCategory }) => {
         type={"text"}
         title={"Name Category"}
       />
-      <Btn2 handle={handleAddCategory}>Add</Btn2>
+      <Btn2 handle={handleAddCategory}>{title}</Btn2>
     </div>
   );
 };

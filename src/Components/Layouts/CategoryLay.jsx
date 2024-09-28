@@ -5,6 +5,7 @@ import ListCategoryFrag from "../Fragments/ListCategoryFrag";
 export const CategoryLay = ({
   data,
   handleBtnCategory,
+  handleBtnEdit,
   handleCategory,
   handleFlashcard,
   handleTitleList,
@@ -26,6 +27,7 @@ export const CategoryLay = ({
               index={index}
               handleCategory={handleCategory}
               handleTitleList={handleTitleList}
+              handleBtnEdit={handleBtnEdit}
             />
           );
         })}

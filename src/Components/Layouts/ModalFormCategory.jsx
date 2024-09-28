@@ -1,9 +1,9 @@
 import FormCategory from "../Fragments/FormCategory";
 
-const ModalFormCategory = ({ handleBtnCategory }) => {
+const ModalFormCategory = ({ title, nilai, handle }) => {
   return (
     <section className="fixed inset-0 w-full flex justify-center items-center bg-black bg-opacity-20">
-      <FormCategory handleBtnCategory={handleBtnCategory} />
+      <FormCategory title={title} nilai={nilai} handleBtnCategory={handle} />
     </section>
   );
 };

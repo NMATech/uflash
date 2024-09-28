@@ -8,12 +8,17 @@ import { GlobalContext } from "../Hooks/AppCategory/GlobalState";
 const Category = () => {
   const { category } = useContext(GlobalContext);
   const [isBtnCategoryClicked, setIsBtnCategoryClicked] = useState(false);
+  const [isBtnEditClicked, setIsBtnEditClicked] = useState(false);
   const [isCategory, setIsCategoryClicked] = useState(null);
   const [isFlashcard, setIsFlashcard] = useState(false);
   const [titleFlashcard, setTitleFlashcard] = useState("");
 
   const handleBtnCategory = () => {
     setIsBtnCategoryClicked((prevValue) => !prevValue);
+  };
+
+  const handleBtnEdit = () => {
+    setIsBtnEditClicked((prevValue) => !prevValue);
   };
 
   const handleCategory = (index) => {
@@ -39,13 +44,14 @@ const Category = () => {
       <section className="w-[50%] mx-auto p-3">
         <CategoryLay
           handleBtnCategory={handleBtnCategory}
+          handleBtnEdit={handleBtnEdit}
           handleCategory={handleCategory}
           handleFlashcard={handleFlashcard}
           handleTitleList={handleTitleList}
           data={category}
         />
       </section>
-      <p>{JSON.stringify(category)}</p>{" "}
+
       {/* Tambahkan ini untuk melihat kategori */}
       {isCategory && (
         <ModalListCard
@@ -55,7 +61,14 @@ const Category = () => {
         />
       )}
       {isBtnCategoryClicked && (
-        <ModalFormCategory handleBtnCategory={handleBtnCategory} />
+        <ModalFormCategory title={"Add"} handle={handleBtnCategory} />
+      )}
+      {isBtnEditClicked && (
+        <ModalFormCategory
+          title={"Edit"}
+          nilai={titleFlashcard}
+          handle={handleBtnEdit}
+        />
       )}
       {isFlashcard && <ModalFormFlashcard handleFlashcard={handleFlashcard} />}
     </>

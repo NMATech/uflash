@@ -1,6 +1,12 @@
 import ListCategorys from "../Elements/ListCategory/Index";
 
-const ListCategoryFrag = ({ index, x, handleCategory, handleTitleList }) => {
+const ListCategoryFrag = ({
+  index,
+  x,
+  handleCategory,
+  handleBtnEdit,
+  handleTitleList,
+}) => {
   return (
     <section className="w-full flex justify-between">
       <section
@@ -11,6 +17,7 @@ const ListCategoryFrag = ({ index, x, handleCategory, handleTitleList }) => {
           index={index}
           x={x}
           handleCategory={handleCategory}
+          handleBtnEdit={handleBtnEdit}
           handleTitleList={handleTitleList}
         />
       </section>
